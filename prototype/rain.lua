@@ -1,8 +1,8 @@
 
 data:extend{
     {
-        name: "lightRain",
-        type: "explosion",
+        name = "lightRain",
+        type = "explosion",
         flags = {"not-on-map"},
         animations =
         {

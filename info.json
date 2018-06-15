@@ -1,0 +1,11 @@
+{
+    "name": "Weather",
+    "version": "0.1.0",
+    "title": "Weather",
+    "author": "keombre",
+    "contact": "",
+    "homepage": "",
+    "factorio_version": "0.16",
+    "dependencies": ["base >= 0.16"],
+    "description": "This mod adds rain."
+}
