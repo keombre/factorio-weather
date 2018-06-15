@@ -2,18 +2,18 @@ require("lib/perlin")
 
 rain = {
     tile = {
-        x = 150,
-        y = 150
+        x = 110,
+        y = 110
     },
     center = {
         x = 0,
         y = 0
     },
     range = {
-        x = 50,
-        y = 50
+        x = 10,
+        y = 10
     },
-    scale = 0.03
+    scale = 0.030
 }
 
 script.on_event({defines.events.on_tick},
@@ -36,7 +36,7 @@ function (e)
         -- display weather only where players are standing (save on resources)
         for index,player in pairs(game.connected_players) do
             
-            local scr_size = player.display_resolution
+            -- local scr_size = player.display_resolution
             local pos = {
                 x = player.position.x - rain.range.x,
                 y = player.position.y - rain.range.y
@@ -56,15 +56,12 @@ function (e)
                     
                     if populated[tile_pos.x] ~= tile_pos.y then
                         populated[tile_pos.x] = tile_pos.y
-                        local noise = perlin:noise(tile_pos.x + seed + rain.center.x, tile_pos.y + seed + rain.center.y, 0.2)
+                        --local noise = perlin:noise(tile_pos.x + seed + rain.center.x, tile_pos.y + seed + rain.center.y, 0.2)
 
                         --player.surface.create_entity{position=tile_pos, text=noise, name="flying-text"}
                         player.surface.create_entity{position=tile_pos, name="demoRain"}
                     end
                 end
-            end
-            for var=2,20 do
-                print(var)
             end
         end
 
